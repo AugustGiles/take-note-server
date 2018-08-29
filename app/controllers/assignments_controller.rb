@@ -16,4 +16,10 @@ class AssignmentsController < ApplicationController
     render json: user
   end
 
+  def create
+    data_sent = ActiveSupport::JSON.decode(request.body.read)
+    assignment = Assignment.create(data_sent)
+    render json: assignment
+  end
+
 end
