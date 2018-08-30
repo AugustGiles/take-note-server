@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username:"teacher1")
-User.create(username:"student1", teacher_id:1)
-User.create(username:"student2", teacher_id:1)
+User.create(username:"teacher1", password:'test')
+User.create(username:"student1", teacher_id:1, password:'test')
+User.create(username:"student2", teacher_id:1, password:'test')
 
 Assignment.create(
   teacher_id:1,

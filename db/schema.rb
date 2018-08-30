@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_150633) do
 
   create_table "users", force: :cascade do |t|
     t.bigint "teacher_id"
-    t.string "username"
+    t.string "username", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_users_on_teacher_id"
