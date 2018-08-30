@@ -5,7 +5,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
       t.integer :student_id
       t.text :assignment_text
       t.integer :practice_goal
-      t.integer :current_practice_time, defult: 0
+      t.integer :current_practice_time, default: 0
 
       t.timestamps
     end

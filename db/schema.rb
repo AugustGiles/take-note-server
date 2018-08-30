@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_150633) do
     t.integer "student_id"
     t.text "assignment_text"
     t.integer "practice_goal"
-    t.integer "current_practice_time"
+    t.integer "current_practice_time", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
