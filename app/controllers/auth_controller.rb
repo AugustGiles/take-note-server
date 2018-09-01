@@ -7,8 +7,9 @@ class AuthController < ApplicationController
 
     #call separate functions?
     if user && user.authenticate(pw)
+      
       @current_user = user
-      render json: { success: true, token: generate_token(user) }
+      render json: { success: true, token: generate_token(user), user: user}
     else
       render json: { success: false }, status: 401
     end

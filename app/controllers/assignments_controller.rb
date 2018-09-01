@@ -1,7 +1,7 @@
 class AssignmentsController < ApplicationController
 
   def index
-    authorized
+    # authorized
     assignments = Assignment.all
     render json: assignments
   end
