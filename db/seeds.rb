@@ -13,13 +13,19 @@ User.create(username:"student2", teacher_id:1, password:'test')
 Assignment.create(
   teacher_id:1,
   student_id: 2,
-  assignment_text: 'Do good student1',
+  assignment_text: {
+    "blocks"=>
+    [{"key"=>"dpkr", "text"=>"Write The First Assignment!", "type"=>"header-three", "depth"=>0, "inlineStyleRanges"=>[], "entityRanges"=>[], "data"=>{}
+    }], "entityMap"=>{}},
   practice_goal: 7200
 )
 
 Assignment.create(
   teacher_id:1,
   student_id: 3,
-  assignment_text: 'Do good student2',
+  assignment_text: {
+    "blocks"=>
+    [{"key"=>"dpkr", "text"=>"Write The First Assignment!", "type"=>"header-three", "depth"=>0, "inlineStyleRanges"=>[], "entityRanges"=>[], "data"=>{}
+    }], "entityMap"=>{}},
   practice_goal: 7200
 )

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_150633) do
   create_table "assignments", force: :cascade do |t|
     t.integer "teacher_id"
     t.integer "student_id"
-    t.text "assignment_text"
+    t.jsonb "assignment_text", default: {}
     t.integer "practice_goal"
     t.integer "current_practice_time", default: 0
     t.datetime "created_at", null: false
