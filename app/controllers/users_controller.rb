@@ -28,6 +28,12 @@ class UsersController < ApplicationController
     render json: @current_user
   end
 
+  def destroy
+    authorized
+    student = User.destroy(params[:id])
+    render json: {message: "#{student.username} Has Been Removed"}
+  end
+
   private
 
   def user_params
