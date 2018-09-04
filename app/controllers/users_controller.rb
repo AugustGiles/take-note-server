@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.valid?
       token = generate_token(user)
-      render json: { success: true, token: token }.to_json, status: 200
+      render json: { success: true, token: token, user: user }.to_json, status: 200
     else
       render json: { success: false, message: "Username Taken" }
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :password)
+    params.permit(:username, :password, :teacher_id)
   end
 
 end
