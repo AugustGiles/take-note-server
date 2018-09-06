@@ -1,4 +1,4 @@
-class RecordingsRecorder < ApplicationController
+class RecordingsController < ApplicationController
 
   def index
     authorized
@@ -8,9 +8,9 @@ class RecordingsRecorder < ApplicationController
 
   def create
     authorized
-    
+    debugger
     recording = Recording.create(data_sent)
-    render json: recording
+    
   end
 
 end
