@@ -46,13 +46,6 @@ ActiveRecord::Schema.define(version: 2018_09_06_193032) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "recordings", force: :cascade do |t|
-    t.integer "assignment_id"
-    t.binary "recording"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.bigint "teacher_id"
     t.string "username", null: false

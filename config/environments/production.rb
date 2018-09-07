@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.active_storage.service = :amazon
+  config.require_master_key = true  #ADDITION HERE
 
   # Code is not reloaded between requests.
   config.cache_classes = true
