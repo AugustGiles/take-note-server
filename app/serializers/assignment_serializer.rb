@@ -5,7 +5,8 @@ class AssignmentSerializer < ActiveModel::Serializer
 
   def recordings
     object.recordings.map { |recording|
-      Rails.application.routes.url_helpers.rails_blob_url(recording, only_path: true)
+      # Rails.application.routes.url_helpers.rails_blob_url(recording, only_path: true)
+      url_for(recording)
     }
   end
 
