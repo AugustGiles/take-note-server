@@ -12,8 +12,8 @@ class AssignmentsController < ApplicationController
     assignment = Assignment.find(params[:id])
     value = assignment["current_practice_time"] + data_sent["current_practice_time"]
     assignment.update(current_practice_time: value)
-    updated = Assignment.all[-1]
-    render json: updated
+    # updated = assignment
+    render json: assignment
   end
 
   def create
