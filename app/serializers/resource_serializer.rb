@@ -3,7 +3,6 @@ class ResourceSerializer < ActiveModel::Serializer
   belongs_to :user
 
   def file
-    debugger
     Rails.application.routes.url_helpers.rails_blob_path(object.file, only_path: true)
   end
 
