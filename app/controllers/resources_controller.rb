@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
   def create
     authorized
     resource = Resource.create(user_id: params[:teacher_id], title: params[:title], file: params[:file])
-    render json: resource
+    render json: Resource.all
   end
 
   private
