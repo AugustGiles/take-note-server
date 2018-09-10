@@ -46,15 +46,8 @@ ActiveRecord::Schema.define(version: 2018_09_09_213338) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "recordings", force: :cascade do |t|
-    t.integer "assignment_id"
-    t.binary "recording"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "resources", force: :cascade do |t|
-    t.integer "teacherId"
+    t.integer "teacher_id"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

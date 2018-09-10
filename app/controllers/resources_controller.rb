@@ -7,8 +7,8 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    authorized
-    debugger
+    # authorized
+    # debugger
   end
 
 end
