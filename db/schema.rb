@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_09_213338) do
+ActiveRecord::Schema.define(version: 2018_09_06_193032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 2018_09_09_213338) do
     t.jsonb "assignment_text", default: {}
     t.integer "practice_goal"
     t.integer "current_practice_time", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "resources", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
