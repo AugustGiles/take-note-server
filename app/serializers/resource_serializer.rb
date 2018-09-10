@@ -1,5 +1,5 @@
 class ResourceSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :title, :description, :file
+  attributes :id, :user_id, :title, :file
   belongs_to :user
 
   def file
