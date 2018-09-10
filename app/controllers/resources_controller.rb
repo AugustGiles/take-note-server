@@ -12,6 +12,12 @@ class ResourcesController < ApplicationController
     render json: Resource.all
   end
 
+  def destroy
+    authorized
+    Resource.destroy(params[:id])
+    render json: Resource.all
+  end
+
   private
 
   def resource_params
