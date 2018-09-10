@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_09_09_213338) do
   end
 
   create_table "resources", force: :cascade do |t|
-    t.integer "teacher_id"
+    t.integer "user_id"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
