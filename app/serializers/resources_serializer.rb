@@ -1,9 +1,9 @@
 class ResourcesSerializer < ActiveModel::Serializer
-  attributes :id, :teacher_id, :title, :resource
-  belongs_to :user
+  attributes :id, :teacher_id, :title, :file
+  belongs_to :assignment
 
-  def resource
-    object.resource
+  def file
+    object.file
   end
 
 end

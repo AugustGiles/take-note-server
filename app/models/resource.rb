@@ -1,4 +1,4 @@
 class Resource < ApplicationRecord
   belongs_to :user
-  has_one_attached :resource
+  has_one_attached :file
 end
