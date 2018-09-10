@@ -18,8 +18,12 @@ class AssignmentsController < ApplicationController
 
   def create
     authorized
-    data_sent = ActiveSupport::JSON.decode(request.body.read)
-    assignment = Assignment.create(data_sent)
+
+    assignment = Assignment.create(teacher_id: params[:teacher_id], student_id: params[:student_id], assignment_text: params[:assignment_text], practice_goal: params[:practice_goal])
+    
+    params[:resources].each do |resource|
+      assignment.resources << Resource.find(resource['id'])
+    end
     render json: assignment
   end
 
@@ -37,7 +41,7 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.permit(:teacher_id, :student_id, :assignment_text, :practice_goal, :current_practice_time, recordings: [])
+    params.permit(:teacher_id, :student_id, :assignment_text, :practice_goal, :current_practice_time, recordings: [], resources: [])
   end
 
 end
