@@ -4,4 +4,6 @@ class Assignment < ApplicationRecord
   has_many_attached :recordings
   has_many :assignment_resources
   has_many :resources, through: :assignment_resources
+  has_many :assignment_youtubes
+  has_many :resources, through: :assignment_youtubes
 end

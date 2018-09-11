@@ -4,6 +4,8 @@ class AssignmentSerializer < ActiveModel::Serializer
   belongs_to :student, class_name: "User", foreign_key: "student_id"
   has_many :assignment_resources
   has_many :resources, through: :assignment_resources
+  has_many :assignment_youtubes
+  has_many :resources, through: :assignment_youtubes
 
   def recordings
     object.recordings.map { |recording|

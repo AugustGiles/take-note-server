@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_214637) do
+ActiveRecord::Schema.define(version: 2018_09_11_204658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 2018_09_10_214637) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "assignment_youtubes", force: :cascade do |t|
+    t.integer "assignment_id"
+    t.integer "youtube_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "assignments", force: :cascade do |t|
     t.integer "teacher_id"
     t.integer "student_id"
@@ -57,7 +64,6 @@ ActiveRecord::Schema.define(version: 2018_09_10_214637) do
     t.integer "user_id"
     t.string "title"
     t.text "description", default: ""
-    t.string "youtube", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,6 +75,15 @@ ActiveRecord::Schema.define(version: 2018_09_10_214637) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_users_on_teacher_id"
+  end
+
+  create_table "youtubes", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.text "description", default: ""
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

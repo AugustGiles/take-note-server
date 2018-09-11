@@ -1,9 +1,10 @@
-class CreateResources < ActiveRecord::Migration[5.2]
+class CreateYoutubes < ActiveRecord::Migration[5.2]
   def change
-    create_table :resources do |t|
+    create_table :youtubes do |t|
       t.integer :user_id
       t.string :title
       t.text :description, default: ''
+      t.string :link
 
       t.timestamps
     end
