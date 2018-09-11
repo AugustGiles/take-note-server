@@ -5,5 +5,5 @@ class Assignment < ApplicationRecord
   has_many :assignment_resources
   has_many :resources, through: :assignment_resources
   has_many :assignment_youtubes
-  has_many :resources, through: :assignment_youtubes
+  has_many :youtubes, through: :assignment_youtubes
 end
