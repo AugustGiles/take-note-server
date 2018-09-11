@@ -5,7 +5,6 @@ class ResourceSerializer < ActiveModel::Serializer
   has_many :assignments, through: :assignment_resources
 
   def file
-    debugger
     if object.youtube == nil
       Rails.application.routes.url_helpers.rails_blob_path(object.file, only_path: true)
     else
