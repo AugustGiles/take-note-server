@@ -8,8 +8,11 @@ class ResourcesController < ApplicationController
 
   def create
     authorized
-    debugger
-    resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], youtube: params[:youtube], file: params[:file])
+    if params[:youtube == nil]
+      resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], file: params[:file])
+    else
+      resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], youtube: params[:youtube])
+    end
     render json: Resource.all
   end
 
