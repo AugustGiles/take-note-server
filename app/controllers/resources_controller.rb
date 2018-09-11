@@ -8,7 +8,7 @@ class ResourcesController < ApplicationController
 
   def create
     authorized
-    if params[:youtube == nil]
+    if params[:youtube] == nil
       resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], file: params[:file])
     else
       resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], youtube: params[:youtube])
