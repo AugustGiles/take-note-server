@@ -6,6 +6,12 @@ class AssignmentsController < ApplicationController
     render json: assignments
   end
 
+  def show
+    authorized
+    assignment = Assignment.find(params[:id])
+    render json: assignment
+  end
+
   def update_current_practice_time
     authorized
     data_sent = ActiveSupport::JSON.decode(request.body.read)
@@ -20,7 +26,7 @@ class AssignmentsController < ApplicationController
     authorized
 
     assignment = Assignment.create(teacher_id: params[:teacher_id], student_id: params[:student_id], assignment_text: params[:assignment_text], practice_goal: params[:practice_goal])
-    
+
     params[:resources].each do |resource|
       assignment.resources << Resource.find(resource['id'])
     end
