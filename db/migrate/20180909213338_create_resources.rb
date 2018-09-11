@@ -4,6 +4,7 @@ class CreateResources < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :title
       t.text :description, default: ''
+      t.string :youtube, default: ''
 
       t.timestamps
     end

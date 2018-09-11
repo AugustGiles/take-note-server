@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_214637) do
     t.integer "user_id"
     t.string "title"
     t.text "description", default: ""
+    t.string "youtube", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
