@@ -8,5 +8,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :assignments, foreign_key: "teacher_id"
 
   has_many :resources
+  has_many :youtubes
 
 end
