@@ -30,6 +30,11 @@ class AssignmentsController < ApplicationController
     params[:resources].each do |resource|
       assignment.resources << Resource.find(resource['id'])
     end
+
+    params[:youtubes].each do |youtube|
+      assignment.youtubes << Youtube.find(youtube['id'])
+    end
+
     render json: assignment
   end
 
@@ -47,7 +52,7 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.permit(:teacher_id, :student_id, :assignment_text, :practice_goal, :current_practice_time, recordings: [], resources: [])
+    params.permit(:teacher_id, :student_id, :assignment_text, :practice_goal, :current_practice_time, recordings: [], youtubes: [], resources: [])
   end
 
 end
