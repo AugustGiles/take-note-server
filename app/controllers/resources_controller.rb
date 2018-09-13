@@ -9,6 +9,7 @@ class ResourcesController < ApplicationController
   def create
     authorized
     resource = Resource.create(user_id: params[:teacher_id], title: params[:title], description: params[:description], file: params[:file])
+    # resources = Resource.all.select {|resource| resource[:teacher_id] == params[:teacher_id]}
     render json: Resource.all
   end
 
